@@ -27,6 +27,8 @@ class ApplicationController < ActionController::Base
     # pull first value and second to convert to
     # make two arrays
     # pass them to the html
+    require "open-uri"
+    require "json"
 
   end
 
