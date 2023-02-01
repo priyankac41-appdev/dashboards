@@ -1,1 +1,12 @@
 <h1>Convert <%= @from_symbol %></h1>
+Go <a href = "/forex/">back</a>
+
+<ul>
+  <% @array_of_symbols.each do |count| %>
+    <li>
+      <a href="/forex/<%= @from_symbol%>/<%= count %>">
+        Convert 1 <%=@from_symbol%> to <%= count %>
+      </a>
+    </li>
+  <% end %>
+</ul>
