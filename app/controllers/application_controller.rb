@@ -16,18 +16,7 @@ class ApplicationController < ActionController::Base
 
     # pull first value
     results_array = parsed_api_data.fetch("symbols")
-    @array_of_numbers = results_array
-    #@array_of_numbers = Array.new
-
-    # 5.times do
-    #   another_number = rand(1...100)
-      
-    #   @array_of_numbers.push(another_number)
-    # end
-
-    # results_array.length().times do
-    #   @array_of_numbers.push(results_array)
-    # end
+    @array_of_symbols = results_array.keys
 
     # pass first value to the html
     render({ :template => "conversion_template/forex.html.erb" })
