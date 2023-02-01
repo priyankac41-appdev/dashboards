@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
     api_url = "https://api.exchangerate.host/convert?from=#{@from_symbol}&to=#{@to_symbol}"
     raw_api_data = URI.open(api_url).read
     parsed_api_data = JSON.parse(raw_api_data)
-    @conversion = parsed_api_data.fetch("info")
+    @conversion = parsed_api_data.fetch("info").fetch("rate")
 
     render({ :template => "conversion_template/step_three.html.erb" })
   end
